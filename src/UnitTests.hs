@@ -12,7 +12,7 @@ testBasic = TestCase $ do
             ]
         assertSplit (c, xs, expected) = assertEqual message expected actual
             where
-                actual = (split c xs)
+                actual = split c xs
                 message = "split " ++ show c ++ " " ++ show xs
 
 tests = TestList [
