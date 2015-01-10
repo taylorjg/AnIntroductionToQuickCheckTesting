@@ -1,0 +1,10 @@
+Version of workspace file format:
+               1
+Time of storage:
+               "Sat Jan 10 16:37:25 GMT Standard Time 2015"
+Name of the workspace:
+               "StringSplitting"
+File paths of contained packages:
+               ["AnIntroductionToQuickCheckTesting.cabal"]
+Maybe file path of an active package:
+               Just "AnIntroductionToQuickCheckTesting.cabal"

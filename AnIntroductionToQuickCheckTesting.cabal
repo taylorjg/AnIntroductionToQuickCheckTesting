@@ -1,0 +1,30 @@
+name: AnIntroductionToQuickCheckTesting
+version: 0.0.1
+cabal-version: >=1.2
+build-type: Simple
+license: AllRightsReserved
+license-file: ""
+synopsis: An introduction to QuickCheck testing
+data-dir: ""
+ 
+executable AnIntroductionToQuickCheckTesting
+    build-depends: HUnit -any, QuickCheck -any, base -any
+    main-is: Main.hs
+    buildable: True
+    hs-source-dirs: src
+    other-modules: StringSplitting PropertyTests UnitTests
+ 
+test-suite UnitTests
+    build-depends: HUnit -any, QuickCheck -any, base -any
+    type: exitcode-stdio-1.0
+    main-is: UnitTests.hs
+    buildable: True
+    cpp-options: -DMAIN_FUNCTION=testMain
+    hs-source-dirs: src
+test-suite PropertyTests
+    build-depends: HUnit -any, QuickCheck -any, base -any
+    type: exitcode-stdio-1.0
+    main-is: PropertyTests.hs
+    buildable: True
+    cpp-options: -DMAIN_FUNCTION=testMain
+    hs-source-dirs: src
