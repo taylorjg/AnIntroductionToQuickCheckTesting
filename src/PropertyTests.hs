@@ -24,7 +24,7 @@ prop_join_split_collect' xs = collect (length xs) $ prop_join_split' xs
 
 -- add a condition that xs is not empty, choose a c from xs using elements
 prop_join_split'' :: String -> Property
-prop_join_split'' xs = (not $ null xs) ==> prop_join_split' xs
+prop_join_split'' xs = not (null xs) ==> prop_join_split' xs
 
 -- add a condition that xs is not empty, choose a c from xs using elements, with collect
 prop_join_split_collect'' :: String -> Property
@@ -44,7 +44,7 @@ main = do
     --r3 <- verboseCheckWithResult args prop_join_split'
     r4 <- quickCheckWithResult args prop_join_split_collect'
 
-    let genNonEmptyString = suchThat (arbitrary :: Gen String) (\xs -> not $ null xs)
+    let genNonEmptyString = suchThat (arbitrary :: Gen String) (\xs -> not (null xs))
     r5 <- quickCheckWithResult args $ forAll genNonEmptyString prop_join_split'
     r6 <- quickCheckWithResult args $ forAll genNonEmptyString prop_join_split_collect'
 
